@@ -2,3 +2,4 @@ Detecting the structure of .hdf file and using it automatically in the code
 Detecting the length of the data and using it automatically in the code
 (Maybe detecting the type of the data and automatically changing it to uint8)
 A nicer way to let the user choose the region of interest
+Nicer output?
