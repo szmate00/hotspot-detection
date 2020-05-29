@@ -1,6 +1,9 @@
-<a href="http://fvcproductions.com"><img src="https://www.energia.mta.hu/sites/default/files/ek_logo_0_0.png"></a>
+<div align="center">
 
-<!-- [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) -->
+<h1>
+    <img alt="MARKDOWN SYNTAX" src="https://www.energia.mta.hu/sites/default/files/ek_logo_0_0.png" width="350" height="50"></img>
+</h1>
+
 
 
 
