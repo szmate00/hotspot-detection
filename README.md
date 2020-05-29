@@ -1,8 +1,4 @@
-<div align="center">
-
-<h1>
-    <img alt="MARKDOWN SYNTAX" src="https://www.energia.mta.hu/sites/default/files/ek_logo_0_0.png" width="350" height="50"></img>
-</h1>
+<a href="https://www.energia.mta.hu/hu/content/fuzios-plazmafizika-laboratorium"><img src="https://www.energia.mta.hu/sites/default/files/ek_logo_0_0.png" title="MTA EK" alt="MTA EK"></a>
 
 
 
