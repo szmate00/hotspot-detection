@@ -3,7 +3,7 @@
 
 # Hotspot Detection
 
-> Detecting hotspots in the data captured by the EDICAM camera system in the Wendelstein W7-X stellarator.
+> Detecting hotspots in the data captured by the EDICAM camera system in the Wendelstein 7-X stellarator.
 
 > A Student Research Societies project
 
