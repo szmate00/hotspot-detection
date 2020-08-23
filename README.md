@@ -10,3 +10,5 @@
 
 
 ...
+##
+[![ROIs][rois]](https://github.com/szmate00/hotspot_detection/blob/master/Hotspot%20Detection%20ROI/rois.png)
