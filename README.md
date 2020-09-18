@@ -8,8 +8,8 @@
 Author: Máté Szűcs<br>
 
 Superviser: Tamás Szepesi, Phd<br>
-Fusion Plasma Physics Department<br>
-Centre for Energy Research
+
+Centre for Energy Research, Fusion Plasma Physics Department<br>
 
 
 
