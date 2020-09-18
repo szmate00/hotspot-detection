@@ -2,7 +2,7 @@
 
 
 # Detecting hotspots in the data captured by the EDICAM camera system in the Wendelstein 7-X stellarator
-> A Student Research Societies project
+A Student Research Societies (TDK) project
 
 ## Eötvös Loránd University 2020
 ### Author: Máté Szűcs<br>
