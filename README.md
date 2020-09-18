@@ -2,6 +2,7 @@
 
 
 # Detecting hotspots in the data captured by the EDICAM camera system in the Wendelstein 7-X stellarator
+> A Student Research Societies project
 
 ## Eötvös Loránd University 2020
 Author: Máté Szűcs<br>
@@ -9,8 +10,6 @@ Author: Máté Szűcs<br>
 Superviser: Tamás Szepesi, Phd<br>
 Fusion Plasma Physics Department<br>
 Centre for Energy Research
-
-> A Student Research Societies project
 
 
 
