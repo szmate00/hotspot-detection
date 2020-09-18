@@ -7,7 +7,7 @@ A Student Research Societies (TDK) project
 ## Eötvös Loránd University 2020
 ### Author: Máté Szűcs<br>
 
-### Superviser: Tamás Szepesi, Phd<br>
+### Supervisor: Tamás Szepesi, Phd<br>
 
 Centre for Energy Research, Fusion Plasma Physics Department<br>
 
