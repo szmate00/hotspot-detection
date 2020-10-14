@@ -16,7 +16,10 @@ with h5py.File(f'C:/TDK/adatok/{File}.h5', 'r') as hdf:
     roip1 = roip.get('ROIP1')
     roip1_data = roip1.get('ROIP1Data')
     roip1_average = roip1.get('ROIP1Average')
-    roip1_median = medfilt(roip1_average, 111)
+    
+    # calculating a decent median filter range for the given file
+    med_range = 2 * (roip1_data.shape[2]//3) + 1
+    roip1_median = medfilt(roip1_average, med_range)
 
     frames1 = []
     List1 = []
@@ -25,7 +28,8 @@ with h5py.File(f'C:/TDK/adatok/{File}.h5', 'r') as hdf:
     # ROI1
     for i in range(roip1_data.shape[2]):
 
-        if 1.2*roip1_median[i] < roip1_average[i]:
+        # condition to sort out faulty frames
+        if 1.3 * roip1_median[i] < roip1_average[i]:
 
             frames1.append(0)
             List21.append(-1)
@@ -62,7 +66,8 @@ with h5py.File(f'C:/TDK/adatok/{File}.h5', 'r') as hdf:
     # ROI2
     for j in range(roip1_data.shape[2]):
 
-        if 1.2 * roip1_median[j] < roip1_average[j]:
+        # condition to sort out faulty frames
+        if 1.3 * roip1_median[j] < roip1_average[j]:
 
             frames2.append(0)
             List22.append(-1)
