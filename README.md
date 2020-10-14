@@ -9,7 +9,10 @@ A Student Research Societies (TDK) project
 
 ### Supervisor: Tamás Szepesi, Phd<br>
 
-Centre for Energy Research, Fusion Plasma Physics Department<br>
+Fusion Plasma Physics Department<br>
+Atomic Energy Research Institute<br>
+Centre for Energy Research<br>
+Eötvös Loránd Research Network
 
 ## Abstract
 
