@@ -1,3 +1,5 @@
+[:hungary: Switch to hungarian description](https://github.com/szmate00/hotspot_detection/blob/master/README_HU.md)<br>
+
 <img src="https://github.com/szmate00/hotspot_detection/blob/master/figures/logok.png" height="150" />
 
 
@@ -17,4 +19,3 @@ Fusion Plasma Physics Department, Centre for Energy Research
 
 
 ...
-:hungary:[Switch to hungarian description](https://github.com/szmate00/hotspot_detection/blob/master/README_HU.md)
