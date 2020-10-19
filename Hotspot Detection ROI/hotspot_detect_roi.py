@@ -10,7 +10,7 @@ from PyPDF2 import PdfFileMerger
 plt.style.use('seaborn-whitegrid')
 
 
-# list consisting the name of folders to be processed, each folder contains the given day's data files
+# list consisting of the name of folders to be processed, each folder contains the given day's data files
 days = ['20181018']
 
 for day in days:
@@ -28,7 +28,7 @@ for day in days:
 
     Files = sorted(Files)
 
-    # crrating folders for the outputs
+    # creating folders for the outputs
     os.makedirs(f'/home/szucsmate/roi/{path[-8:]}')
     os.makedirs(f'/home/szucsmate/roi/{path[-8:]}/pdf')
     os.makedirs(f'/home/szucsmate/roi/{path[-8:]}/csv')
