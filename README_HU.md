@@ -16,4 +16,5 @@ Energiatudományi Kutatóközpont, Fúziós Plazmafizika Laboratórium
 ## Absztrakt
 
 
-...
+...<br>
+*(Megjegyzés: A kód angol nyelvű kommenteket tartalmaz.)*
