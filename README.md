@@ -6,6 +6,7 @@ A Student Research Societies (TDK) project
 
 ## Eötvös Loránd University 2020
 ### Author: Máté Szűcs<br>
+*Physics BSc II. year*
 
 ### Supervisor: Tamás Szepesi, Phd<br>
 
