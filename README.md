@@ -1,4 +1,4 @@
-<img src="https://github.com/szmate00/hotspot_detection/blob/master/figures/logok.png" height="200" />
+<img src="https://github.com/szmate00/hotspot_detection/blob/master/figures/logok.png" height="150" />
 
 
 # Detecting hotspots in the data captured by the EDICAM camera system in the Wendelstein 7-X stellarator
