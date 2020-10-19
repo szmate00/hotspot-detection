@@ -5,7 +5,8 @@
 Tudományos Diákköri Konferencia dolgozat
 
 ## Eötvös Loránd Tudományegyetem 2020
-### Szerző: Szűcs Máté, *Fizika BSc II. évfolyam*<br>
+### Szerző: Szűcs Máté<br>
+*Fizika BSc II. évfolyam*<br>
 
 ### Témavezető: Szepesi Tamás, Phd<br>
 
