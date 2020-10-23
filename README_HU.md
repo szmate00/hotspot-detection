@@ -1,4 +1,4 @@
-<img src="https://github.com/szmate00/hotspot_detection/blob/master/figures/ek_hu.png" height="150" />
+<img src="https://github.com/szmate00/hotspot_detection/blob/master/figures/logok_hu.png" height="150" />
 
 
 # Lokális plazma-fal kölcsönhatások észlelése az EDICAM kamerarendszer által kinyert adatokban
