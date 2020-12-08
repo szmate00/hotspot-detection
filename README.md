@@ -16,5 +16,4 @@ Fusion Plasma Physics Department, Centre for Energy Research
 ## Abstract
 
 
-...<br>
-[Switch to Hungarian description :hungary:](https://github.com/szmate00/hotspot_detection/blob/master/README_HU.md)
+...
