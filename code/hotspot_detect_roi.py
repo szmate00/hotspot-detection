@@ -15,7 +15,6 @@ threshold = 2800
 day = '20181002'
 aeq = 'AEQ31'
 path = f'data/W7-X/EDICAM/{aeq}/{day}'
-    pdfs = []
     
 with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
     roip = hdf.get('ROIP')
