@@ -11,7 +11,7 @@ import seaborn as sns
 
 sns.set_style('whitegrid')
 
-threshold = 2800
+threshold = 3000
 day = '20181002'
 aeq = 'AEQ31'
 path = f'data/W7-X/EDICAM/{aeq}/{day}'
@@ -26,14 +26,8 @@ with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
     roi1_medfilt = medfilt(roi1_average, med_range)
 
     # ROI1  
-    frames1 = []
-    List1 = []
-    List21 = []
-              
-    # ROI2  
-    frames2 = []
-    List2 = []
-    List22 = []
+    pixel_sum = []
+    binary = []
 
     # for each image in dataset
     for i in range(roip1_data.shape[2]):
@@ -41,19 +35,10 @@ with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
         # sorting out faulty images
         if 1.3 * roi1_medfilt[i] < roi1_average[i]:
             
-            frames1.append(0)
-            List21.append(-1)
-            List1.append(-1)
-              
-            frames2.append(0)
-            List22.append(-1)
-            List2.append(-1)
+            pixel_sum.append(0)
+            binary.append(-1)
 
         else:
-                    
-            # NOTE: less time consuming to do the transformations only on the bigger ROI
-            # then cutting the smaller one out of it ?
-            # would have done the same transformations on them anyways
                                
             # ROI2 (bigger one)
             image2 = np.array(roip1_data[65:265, 440:595, i])
@@ -77,25 +62,12 @@ with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
             # IF RO1 and ROI2 pixels match:
             # adding number of nonzero pixels to predifined lists frames1 and frames2
             if nzCount1 == 0 or nzCount2 - nzCount1 != 0:
-                List1.append(0)
-                List21.append(0)
-                frames1.append(0)
+                pixel_sum.append(0)
+                binary.append(0)
               
             else:
-                List1.append(1)
-                List21.append(1)
-                frames1.append(nzCount1)
-              
-            if nzCount2 == 0 or nzCount2 - nzCount1 != 0:
-                List2.append(0)
-                List22.append(0)
-                frames2.append(0)
-              
-            else:
-                List2.append(1)
-                List22.append(1)
-                frames2.append(nzCount2)
-
+                binary.append(1)
+                pixel_sum.append(nzCount1)
 
 # creating a pdf with plots
 with PdfPages(f'/home/szucsmate/roi/{path[-8:]}/pdf/{m}.pdf') as pdf:
@@ -103,26 +75,16 @@ with PdfPages(f'/home/szucsmate/roi/{path[-8:]}/pdf/{m}.pdf') as pdf:
     plt.figure(figsize=(8.27, 11.69), dpi=100)
     plt.suptitle(f'{m} (threshold={threshold})', fontweight="bold", fontsize=15)
               
-    plt.subplot(3, 1, 1)
-    plt.plot(frames1, color='r', label='size of ROI1: 85x130')
-    plt.title('ROI1', size=12)
+    plt.subplot(2, 1, 1)
+    plt.plot(pixel_sum, color='r')
+    plt.title('Hotspot size', size=12)
     plt.xlabel('Frames', size=12)
     plt.ylabel('Number of pixels above threshold', size=12)
     ax = plt.gca()
     Ylim = ax.get_ylim()
 
-    plt.subplot(3, 1, 2)
-    plt.plot(frames2, color='g', label='size of ROI2: 135x180')
-    plt.title('ROI2', size=12)
-    plt.xlabel('Frames', size=12)
-    plt.ylabel('Number of pixels above threshold', size=12)
-    ax = plt.gca()
-    ax.set_ylim(Ylim)
-    
-    plt.subplot(3, 1, 3)
-    plt.plot(List21, color='r', label='ROI1')
-    plt.plot(List22, color='g', label='ROI2')
-
+    plt.subplot(2, 1, 3)
+    plt.plot(binary, color='r')
     plt.title('Binary Classification', size=12)
     plt.xlabel('Frames', size=12)
     plt.ylabel('Hotspot', size=12)
@@ -133,5 +95,5 @@ with PdfPages(f'/home/szucsmate/roi/{path[-8:]}/pdf/{m}.pdf') as pdf:
     plt.close()
     
 # saving binary hotspot classification to .csv
-df = pd.DataFrame(List1, columns=["Hotspot"])
+df = pd.DataFrame(binary, columns=["Hotspot"])
 df.to_csv(f'/home/szucsmate/roi/{path[-8:]}/csv/{File}.csv', index=True)
