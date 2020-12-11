@@ -25,7 +25,7 @@ with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
     med_range = 2 * (roip1_data.shape[2]//12) + 1
     roi1_medfilt = medfilt(roi1_average, med_range)
 
-    # ROI1  
+    # lists to store the data
     pixel_sum = []
     binary = []
 
@@ -35,15 +35,17 @@ with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
         # sorting out faulty images
         if 1.3 * roi1_medfilt[i] < roi1_average[i]:
             
+            # sum of pixels is 0 since we count this as no hotspot
             pixel_sum.append(0)
+            # -1 indicates faulty image in the binary classification list
             binary.append(-1)
 
         else:
                                
-            # ROI2 (bigger one)
+            # loading ROI2 (bigger one)
             image2 = np.array(roip1_data[65:265, 440:595, i])
 
-            # using median filter
+            # median filter to clear outliar pixels coused by the radiation
             blur = cv2.medianBlur(image2, 3)
 
             # binarization
@@ -54,22 +56,21 @@ with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
             
             # counting the nonzero pixel values in the images
             nzCount1 = cv2.countNonZero(thresh1)
-            nzCount2 = cv2.countNonZero(thresh2)
-   
-                    
-            # adding the number of the frames and binary value of hotspot to lists
+            nzCount2 = cv2.countNonZero(thresh2)          
               
-            # IF RO1 and ROI2 pixels match:
-            # adding number of nonzero pixels to predifined lists frames1 and frames2
+            # IF RO1 and ROI2 pixels DO NOT match:
+            # we do not signal hotspot
             if nzCount1 == 0 or nzCount2 - nzCount1 != 0:
                 pixel_sum.append(0)
                 binary.append(0)
               
+            # IF RO1 and ROI2 pixels DO match:
+            # adding number of nonzero pixels and binary classification of data to predifined lists
             else:
                 binary.append(1)
                 pixel_sum.append(nzCount1)
 
-# creating a pdf with plots
+# creating a .pdf with plots
 with PdfPages(f'/home/szucsmate/roi/{path[-8:]}/pdf/{m}.pdf') as pdf:
               
     plt.figure(figsize=(8.27, 11.69), dpi=100)
