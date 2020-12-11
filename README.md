@@ -1,5 +1,5 @@
 # Hotspot detection
-Algorithms to detect plasma-wall interactions (hotspots) in the images taken by the EDICAM camera system inside the Wendelstein 7-X stellarator
+Algorithms to detect plasma-wall interactions (hotspots) in the images taken by the EDICAM camera system inside the [Wendelstein 7-X stellarator](https://www.ipp.mpg.de/w7x)
 
 ## Local hotspot detection
 Detecting hotspots in predefined regions of interests (ROIs)<br>
