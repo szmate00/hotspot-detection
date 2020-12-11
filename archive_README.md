@@ -1,3 +1,5 @@
+will use this template someday... maybe
+
 <img src="https://github.com/szmate00/hotspot_detection/blob/master/figures/logok.png" height="150" />
 
 
@@ -16,6 +18,6 @@ Fusion Plasma Physics Department, Centre for Energy Research
 ## Abstract
 
 
-...<br>
+...
 
-will use this template someday... maybe
+
