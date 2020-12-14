@@ -12,11 +12,9 @@ import seaborn as sns
 sns.set_style('whitegrid')
 
 threshold = 3000
-day = '20181002'
-aeq = 'AEQ31'
-path = f'data/W7-X/EDICAM/{aeq}/{day}'
+File = 'AEQ31_edi_20181002_049_161934'
     
-with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
+with h5py.File(f'C:/TDK/adatok/{File}.h5', 'r') as hdf:
     roip = hdf.get('ROIP')
     roip1 = roip.get('ROIP1')
     roip1_data = roip1.get('ROIP1Data')
@@ -52,7 +50,7 @@ with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
             thresh2 = cv2.threshold(blur, threshold, 4095, cv2.THRESH_BINARY)[1]
               
             # cutting the smaller one (ROI1) out
-            thresh1 = np.array(roip1_data[90:240, 465:570, thresh2])
+            thresh1 = thresh2[25:175, 25:130]
             
             # counting the nonzero pixel values in the images
             nzCount1 = cv2.countNonZero(thresh1)
@@ -71,10 +69,10 @@ with h5py.File(f'/{path}/{File}.h5', 'r') as hdf:
                 pixel_sum.append(nzCount1)
 
 # creating a .pdf with plots
-with PdfPages(f'/home/szucsmate/roi/{path[-8:]}/pdf/{m}.pdf') as pdf:
+with PdfPages(f'{File}.pdf') as pdf:
               
     plt.figure(figsize=(8.27, 11.69), dpi=100)
-    plt.suptitle(f'{m} (threshold={threshold})', fontweight="bold", fontsize=15)
+    plt.suptitle(f'{File} (threshold={threshold})', fontweight="bold", fontsize=15)
               
     plt.subplot(2, 1, 1)
     plt.plot(pixel_sum, color='r')
@@ -84,7 +82,7 @@ with PdfPages(f'/home/szucsmate/roi/{path[-8:]}/pdf/{m}.pdf') as pdf:
     ax = plt.gca()
     Ylim = ax.get_ylim()
 
-    plt.subplot(2, 1, 3)
+    plt.subplot(2, 1, 2)
     plt.plot(binary, color='r')
     plt.title('Binary Classification', size=12)
     plt.xlabel('Frames', size=12)
@@ -97,4 +95,4 @@ with PdfPages(f'/home/szucsmate/roi/{path[-8:]}/pdf/{m}.pdf') as pdf:
     
 # saving binary hotspot classification to .csv
 df = pd.DataFrame(binary, columns=["Hotspot"])
-df.to_csv(f'/home/szucsmate/roi/{path[-8:]}/csv/{File}.csv', index=True)
+df.to_csv(f'{File}.csv', index=True)
