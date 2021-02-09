@@ -1,4 +1,4 @@
-<img src="https://github.com/szmate00/hotspot_detection/blob/master/figures/EK_logo_new_with_text_transparent_eng.png" height="100" />
+<img src="https://github.com/szmate00/hotspot_detection/blob/master/figures/EK_logo_new_with_text_transparent_eng.png" height="80" />
 
 
 # Hotspot detection
