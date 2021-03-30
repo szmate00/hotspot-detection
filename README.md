@@ -8,4 +8,5 @@ Algorithms to detect plasma-wall interactions (hotspots) in the images taken by 
 Detecting hotspots in predefined regions of interests (ROIs)<br>
 [See code here](https://github.com/szmate00/hotspot_detection/blob/master/local_detection/hotspot_detect_roi.py)
 ## Universal hotspot detection
-Under development...
+Detecting hotspots in the entirety of the image<br>
+[See code here](https://github.com/szmate00/hotspot_detection/blob/master/universal_detection/hotspot.py)
